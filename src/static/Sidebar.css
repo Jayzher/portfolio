@@ -1,0 +1,34 @@
+.dark .nav-link:hover {
+    background: rgb(31,41,55);
+    .nav-icon {
+        color: rgb(243,244,246);
+    }
+}
+
+.nav-link {
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    background: rgb(243,244,246);
+    .nav-icon {
+        color: rgb(31,41,55);
+    }
+}
+    
+/* Active link (react-scroll adds .active) */
+.nav-link.active {
+    background: rgb(14,165,233); /* sky-500 */
+}
+
+.nav-link.active .nav-icon {
+    color: white;
+}
+
+.dark .nav-link.active {
+    background: rgb(55,65,81); /* gray-700 */
+}
+
+.dark .nav-link.active .nav-icon {
+    color: rgb(243,244,246);
+}

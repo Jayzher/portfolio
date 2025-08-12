@@ -1,6 +1,17 @@
+import { scroller } from 'react-scroll';
+
 export default function Hero() {
+    const goProjects = () => {
+        scroller.scrollTo('projects', {
+            duration: 700,
+            smooth: 'easeInOutCubic',
+            containerId: 'scroll-container',
+            offset: -8,
+        });
+    };
+
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen bg-primary transition-colors duration-300">
+        <div className="flex flex-col justify-center items-center min-h-screen duration-300">
             <div className="text-center px-4">
                 <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
                     Welcome to My 3D Portfolio
@@ -12,9 +23,10 @@ export default function Hero() {
                     <div className="border-2 border-primary w-fit h-fit rounded-xl transition-all duration-300 hover:scale-105 transform">
                         <button
                             type="button"
-                            className="px-6 py-3 rounded-lg font-bold text-primary hover:bg-sky-400 hover:text-white transition-all duration-300"
+                            onClick={goProjects}
+                            className="px-6 py-3 rounded-lg font-bold text-primary hover:bg-brand hover:text-variant transition-all duration-300"
                         >
-                            Learn More
+                            Explore Projects
                         </button>
                     </div>
                 </div>
