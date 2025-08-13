@@ -121,8 +121,8 @@ export default function Sidebar() {
     }, [getContainer]);
 
     return (
-        <div className="flex flex-col items-center h-[100vh] gap-y-4 w-16 bg-brand shadow-lg border-r border-primary">
-            <div className="text-center mt-4">
+        <div className="sidebar !p-2 flex lg:flex-col !gap-3 justify-center items-center">
+            <div className="text-center lg:mt-4 flex items-center justify-center">
                 <button 
                     onClick={toggleDarkMode}
                     className={`cursor-pointer p-2 rounded-lg ${darkMode ? 'bg-gray-700 dark:text-gray-200' : 'bg-sky-400 text-yellow-200'} hover:opacity-80 transition-all duration-300`}
@@ -149,26 +149,68 @@ export default function Sidebar() {
                 </button>
             </div>
             
-            <button type="button" onClick={() => { setActiveSection('home'); scrollTo('home'); }} className={`text-center cursor-pointer px-2 py-2 nav-link ${activeSection==='home' ? 'active' : ''}`}>
-                <IoMdHome className="text-4xl text-variant hover:opacity-80 nav-icon"/>
+            <button 
+                type="button" 
+                onClick={() => { setActiveSection('home'); scrollTo('home'); }} 
+                className={`nav-link ${activeSection==='home' ? 'active' : ''}`}
+                data-name="Home"
+                aria-label="Home"
+            >
+                <IoMdHome className="text-4xl nav-icon"/>
             </button>
-            <button type="button" onClick={() => { setActiveSection('about'); scrollTo('about'); }} className={`text-center cursor-pointer px-2 py-2 nav-link ${activeSection==='about' ? 'active' : ''}`} aria-label="About">
-                <IoMdPerson className="text-4xl text-variant hover:opacity-80 nav-icon"/>
+            <button 
+                type="button" 
+                onClick={() => { setActiveSection('about'); scrollTo('about'); }} 
+                className={`nav-link ${activeSection==='about' ? 'active' : ''}`} 
+                data-name="About"
+                aria-label="About"
+            >
+                <IoMdPerson className="text-4xl nav-icon"/>
             </button>
-            <button type="button" onClick={() => { setActiveSection('projects'); scrollTo('projects'); }} className={`text-center cursor-pointer px-2 py-2 nav-link ${activeSection==='projects' ? 'active' : ''}`} aria-label="Projects">
-                <IoMdFolderOpen className="text-4xl text-variant hover:opacity-80 nav-icon"/>
+            <button 
+                type="button" 
+                onClick={() => { setActiveSection('projects'); scrollTo('projects'); }} 
+                className={`nav-link ${activeSection==='projects' ? 'active' : ''}`} 
+                data-name="Projects"
+                aria-label="Projects"
+            >
+                <IoMdFolderOpen className="text-4xl nav-icon"/>
             </button>
-            <button type="button" onClick={() => { setActiveSection('skills'); scrollTo('skills'); }} className={`text-center cursor-pointer px-2 py-2 nav-link ${activeSection==='skills' ? 'active' : ''}`} aria-label="Skills">
-                <IoMdConstruct className="text-4xl text-variant hover:opacity-80 nav-icon"/>
+            <button 
+                type="button" 
+                onClick={() => { setActiveSection('skills'); scrollTo('skills'); }} 
+                className={`nav-link ${activeSection==='skills' ? 'active' : ''}`} 
+                data-name="Skills"
+                aria-label="Skills"
+            >
+                <IoMdConstruct className="text-4xl nav-icon"/>
             </button>
-            <button type="button" onClick={() => { setActiveSection('technologies'); scrollTo('technologies'); }} className={`text-center cursor-pointer px-2 py-2 nav-link ${activeSection==='technologies' ? 'active' : ''}`} aria-label="Technologies">
-                <IoMdCode className="text-4xl text-variant hover:opacity-80 nav-icon"/>
+            <button 
+                type="button" 
+                onClick={() => { setActiveSection('technologies'); scrollTo('technologies'); }} 
+                className={`nav-link ${activeSection==='technologies' ? 'active' : ''}`} 
+                data-name="Technologies"
+                aria-label="Technologies"
+            >
+                <IoMdCode className="text-4xl nav-icon"/>
             </button>
-            <button type="button" onClick={() => { setActiveSection('testimonials'); scrollTo('testimonials'); }} className={`text-center cursor-pointer px-2 py-2 nav-link ${activeSection==='testimonials' ? 'active' : ''}`} aria-label="Testimonials">
-                <IoMdChatbubbles className="text-4xl text-variant hover:opacity-80 nav-icon"/>
+            <button 
+                type="button" 
+                onClick={() => { setActiveSection('testimonials'); scrollTo('testimonials'); }} 
+                className={`nav-link ${activeSection==='testimonials' ? 'active' : ''}`} 
+                data-name="Testimonials"
+                aria-label="Testimonials"
+            >
+                <IoMdChatbubbles className="text-4xl nav-icon"/>
             </button>
-            <button type="button" onClick={() => { setActiveSection('contact'); scrollTo('contact'); }} className={`text-center cursor-pointer px-2 py-2 nav-link ${activeSection==='contact' ? 'active' : ''}`} aria-label="Contact">
-                <IoMdMail className="text-4xl text-variant hover:opacity-80 nav-icon"/>
+            <button 
+                type="button" 
+                onClick={() => { setActiveSection('contact'); scrollTo('contact'); }} 
+                className={`nav-link ${activeSection==='contact' ? 'active' : ''}`} 
+                data-name="Contact"
+                aria-label="Contact"
+            >
+                <IoMdMail className="text-4xl nav-icon"/>
             </button>
         </div>
     )

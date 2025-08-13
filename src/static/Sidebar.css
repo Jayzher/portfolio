@@ -1,34 +1,189 @@
-.dark .nav-link:hover {
-    background: rgb(31,41,55);
-    .nav-icon {
-        color: rgb(243,244,246);
+/* Base styles for the sidebar */
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgb(229, 231, 235);
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .sidebar {
+    background-color: rgb(17, 24, 39);
+    border-top: 1px solid rgb(31, 41, 55);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: auto;
+        width: 4rem;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem 0;
+        border-right: 1px solid rgb(229, 231, 235);
+        border-top: none;
+        box-shadow: 4px 0 6px -1px rgba(0, 0, 0, 0.1), 2px 0 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .dark .sidebar {
+        border-right: 1px solid rgb(31, 41, 55);
+        border-top: none;
     }
 }
 
+/* Nav link base styles */
 .nav-link {
-    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-.nav-link:hover {
-    background: rgb(243,244,246);
-    .nav-icon {
-        color: rgb(31,41,55);
+/* Nav link hover effect */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: attr(data-name);
+    position: absolute;
+    left: 50%;
+    top: -0.5rem;
+    transform: translateX(-50%) translateY(-100%);
+    white-space: nowrap;
+    background-color: rgba(31, 41, 55, 0.9);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    min-width: max-content;
+    text-align: center;
+}
+
+.dark .nav-link::after {
+    background-color: rgba(243, 244, 246, 0.9);
+    color: rgb(17, 24, 39);
+}
+
+/* Mobile tooltip (bottom sidebar) */
+@media (max-width: 767px) {
+    .nav-link {
+        overflow: visible;
+    }
+    
+    .nav-link::after {
+        left: 50%;
+        top: -0.5rem;
+        transform: translateX(-50%) translateY(0);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-100%);
     }
 }
+
+/* Desktop tooltip (left sidebar) */
+@media (min-width: 768px) {
+    .nav-link::after {
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-10px);
+    }
     
-/* Active link (react-scroll adds .active) */
+    .nav-link:hover::after {
+        opacity: 1;
+        transform: translateY(-50%) translateX(10px);
+    }
+}
+
+/* Nav icon styles */
+.nav-icon {
+    transition: all 0.3s ease;
+    color: rgb(31, 41, 55);
+}
+
+.dark .nav-icon {
+    color: rgb(243, 244, 246);
+}
+
+/* Hover state */
+.nav-link:hover {
+    background-color: rgb(243, 244, 246);
+}
+
+.nav-link:hover .nav-icon {
+    color: rgb(31, 41, 55);
+    transform: scale(1.1);
+}
+
+.dark .nav-link:hover {
+    background-color: rgb(31, 41, 55);
+}
+
+.dark .nav-link:hover .nav-icon {
+    color: rgb(243, 244, 246);
+}
+
+/* Active link */
 .nav-link.active {
-    background: rgb(14,165,233); /* sky-500 */
+    background-color: rgb(14, 165, 233);
 }
 
 .nav-link.active .nav-icon {
     color: white;
+    transform: scale(1.1);
 }
 
 .dark .nav-link.active {
-    background: rgb(55,65,81); /* gray-700 */
+    background-color: rgb(55, 65, 81);
 }
 
 .dark .nav-link.active .nav-icon {
-    color: rgb(243,244,246);
+    color: rgb(243, 244, 246);
+}
+
+/* Ensure tooltip is visible on hover */
+@media (min-width: 768px) {
+    .nav-link {
+        overflow: visible;
+    }
+    
+    .nav-link::after {
+        left: 100%;
+        transform: translateY(-50%) translateX(-10px);
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        opacity: 1;
+        transform: translateY(-50%) translateX(10px);
+    }
 }
