@@ -152,7 +152,7 @@ export default function Sidebar() {
             <button 
                 type="button" 
                 onClick={() => { setActiveSection('home'); scrollTo('home'); }} 
-                className={`nav-link ${activeSection==='home' ? 'active' : ''}`}
+                className={`cursor-pointer nav-link ${activeSection==='home' ? 'active' : ''}`}
                 data-name="Home"
                 aria-label="Home"
             >
@@ -161,7 +161,7 @@ export default function Sidebar() {
             <button 
                 type="button" 
                 onClick={() => { setActiveSection('about'); scrollTo('about'); }} 
-                className={`nav-link ${activeSection==='about' ? 'active' : ''}`} 
+                className={`cursor-pointer nav-link ${activeSection==='about' ? 'active' : ''}`} 
                 data-name="About"
                 aria-label="About"
             >
@@ -170,7 +170,7 @@ export default function Sidebar() {
             <button 
                 type="button" 
                 onClick={() => { setActiveSection('projects'); scrollTo('projects'); }} 
-                className={`nav-link ${activeSection==='projects' ? 'active' : ''}`} 
+                className={`cursor-pointer nav-link ${activeSection==='projects' ? 'active' : ''}`} 
                 data-name="Projects"
                 aria-label="Projects"
             >
@@ -179,7 +179,7 @@ export default function Sidebar() {
             <button 
                 type="button" 
                 onClick={() => { setActiveSection('skills'); scrollTo('skills'); }} 
-                className={`nav-link ${activeSection==='skills' ? 'active' : ''}`} 
+                className={`cursor-pointer nav-link ${activeSection==='skills' ? 'active' : ''}`} 
                 data-name="Skills"
                 aria-label="Skills"
             >
@@ -188,7 +188,7 @@ export default function Sidebar() {
             <button 
                 type="button" 
                 onClick={() => { setActiveSection('technologies'); scrollTo('technologies'); }} 
-                className={`nav-link ${activeSection==='technologies' ? 'active' : ''}`} 
+                className={`cursor-pointer nav-link ${activeSection==='technologies' ? 'active' : ''}`} 
                 data-name="Technologies"
                 aria-label="Technologies"
             >
@@ -197,7 +197,7 @@ export default function Sidebar() {
             <button 
                 type="button" 
                 onClick={() => { setActiveSection('testimonials'); scrollTo('testimonials'); }} 
-                className={`nav-link ${activeSection==='testimonials' ? 'active' : ''}`} 
+                className={`cursor-pointer nav-link ${activeSection==='testimonials' ? 'active' : ''}`} 
                 data-name="Testimonials"
                 aria-label="Testimonials"
             >
@@ -206,7 +206,7 @@ export default function Sidebar() {
             <button 
                 type="button" 
                 onClick={() => { setActiveSection('contact'); scrollTo('contact'); }} 
-                className={`nav-link ${activeSection==='contact' ? 'active' : ''}`} 
+                className={`cursor-pointer nav-link ${activeSection==='contact' ? 'active' : ''}`} 
                 data-name="Contact"
                 aria-label="Contact"
             >

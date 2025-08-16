@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <div className="min-h-screen flex grow-0 shrink-0 overflow-hidden">
           <Sidebar />
-          <main id="scroll-container" className="flex-1 p-6 h-[100vh] justify-center overflow-y-auto">
+          <main id="scroll-container" className="flex-1 p-6 h-[100vh] xl:ml-[5vw] justify-center overflow-y-auto">
             <Element name="home" id="home">
               <Home />
             </Element>
